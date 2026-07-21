@@ -1,0 +1,51 @@
+@import url(./styles/reset.css);
+@import url(./styles/fonts.css);
+
+html {
+	font-size: 16px;
+	color: #fff;
+	font-family: "Geomini";
+}
+
+.container {
+	padding-inline: calc((100% - 1440px) / 2);
+}
+
+header.container {
+	background: #6eab7a;
+}
+
+footer {
+	background: #6eab7a;
+}
+
+main {
+	background: #a1ba9d;
+}
+
+.render-books {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	.book-container {
+		width: 400px;
+		background: rgb(17, 55, 21);
+		padding: 1rem;
+
+		.section-img {
+			display: flex;
+			justify-content: center;
+			margin: 2rem;
+		}
+
+		.price-and-like {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.heart {
+			cursor: pointer;
+		}
+	}
+}

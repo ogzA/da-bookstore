@@ -3,11 +3,27 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./styles/reset.css" />
+		<script src="./scripts/db.js" async></script>
+		<script src="./scripts/templates.js"></script>
+		<script src="./script.js" async></script>
 		<link rel="stylesheet" href="style.css" />
-		<script src="script.js"></script>
-
 		<title>Bookstore</title>
 	</head>
-	<body></body>
+	<body onload="init()">
+		<header class="container">
+			<a href="#">
+				<img
+					src="./assets/icons/logo.svg"
+					height="75"
+					alt="Bookstore"
+				/>
+			</a>
+			<h1>Bookstore</h1>
+		</header>
+
+		<main class="container">
+			<section id="render-books" class="render-books"></section>
+		</main>
+		<footer></footer>
+	</body>
 </html>

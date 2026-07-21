@@ -10,6 +10,6 @@ function renderBooks() {
 	for (let booksIndex = 0; booksIndex < books.length; booksIndex++) {
 		const book = books[booksIndex];
 
-		renderBooksRef.innerHTML += getBookTemplate(book);
+		renderBooksRef.innerHTML += getBookTemplate(book, booksIndex);
 	}
 }

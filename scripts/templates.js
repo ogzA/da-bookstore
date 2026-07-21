@@ -15,10 +15,22 @@ function getBookTemplate(book) {
                     <p class="book-favorite">${book.likes} ${getLikeStatus(book.liked)}</p>
                 </div>
 
-                <div></div>
-                <div>${book.author}</div>
-                <div>${book.publishedYear}</div>
-                <div>${book.genre}</div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Autor</th>
+                            <td>: ${book.author}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Erscheinungsjahr</th>
+                            <td>: ${book.publishedYear}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Genre</th>
+                            <td>: ${book.genre}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
             <section id="section-comments">
                 ${getCommentsTemplate(book.comments)}

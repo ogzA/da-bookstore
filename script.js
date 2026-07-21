@@ -1,4 +1,5 @@
 function init() {
+	loadBooks();
 	renderBooks();
 }
 
@@ -35,6 +36,7 @@ function updateLikeStatus(booksIndex) {
 		book.likes++;
 	}
 
+	saveBooks();
 	renderBooks();
 }
 
@@ -48,5 +50,18 @@ function addComment(booksIndex) {
 			comment: commentInputValue,
 		});
 	}
+	saveBooks();
 	renderBooks();
+}
+
+function saveBooks() {
+	localStorage.setItem("books", JSON.stringify(books));
+}
+
+function loadBooks() {
+	const storedBooks = JSON.parse(localStorage.getItem("books"));
+
+	if (storedBooks !== null) {
+		books = storedBooks;
+	}
 }

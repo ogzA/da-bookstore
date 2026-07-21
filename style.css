@@ -13,22 +13,32 @@ html {
 
 header.container {
 	background: #6eab7a;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding-block: 1rem;
 }
 
 footer {
 	background: #6eab7a;
+	padding-block: 2rem;
 }
 
 main {
 	background: #a1ba9d;
+	padding-block: 4rem;
+}
+
+button {
+	cursor: pointer;
 }
 
 .render-books {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 2rem;
-	.book-container {
-		width: 400px;
+	.book-card {
+		height: 45em;
 		background: rgb(17, 55, 21);
 		padding: 1rem;
 
@@ -38,14 +48,60 @@ main {
 			margin: 2rem;
 		}
 
-		.price-and-like {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+		table {
+			width: 100%;
+			th {
+				vertical-align: top;
+				width: 45%;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			tr {
+				text-align: left;
+			}
 		}
 
-		.heart {
-			cursor: pointer;
+		.section-details {
+			margin-bottom: 2rem;
+			.price-and-like {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 1rem;
+
+				.book-price {
+					font-size: 1.5rem;
+				}
+
+				.book-favorite {
+					display: flex;
+					align-items: center;
+					gap: 1rem;
+				}
+			}
+		}
+
+		.section-comments {
+			.comment-list {
+				height: 14em;
+				overflow-y: auto;
+
+				&::-webkit-scrollbar {
+					width: 5px;
+					height: 8px;
+					background-color: #aaaaaa; /* or add it to the track */
+				}
+
+				/* Add a thumb */
+				&::-webkit-scrollbar-thumb {
+					background: #9affae;
+				}
+
+				table {
+					margin-bottom: 1rem;
+				}
+			}
 		}
 	}
 }

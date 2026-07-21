@@ -39,6 +39,10 @@ function getBookTemplate(book, booksIndex) {
                 <div class="comment-list">
                     ${getCommentsTemplate(book.comments)}
                 </div>
+                <div class="add-comment">
+                    <input id="comment-input-${booksIndex}" placeholder="Kommentar hinzufügen" type="textarea">
+                    <button onclick="addComment(${booksIndex})">Hinzufügen</button>
+                </div>
             </section>
         </article>
     `;
@@ -63,6 +67,22 @@ function getCommentsTemplate(comments) {
 	}
 
 	return commentsHTML;
+}
+
+function addComment(booksIndex) {
+	const commentInput = document.getElementById(`comment-input-${booksIndex}`);
+	const commentInputValue = commentInput.value;
+
+	if (commentInputValue !== "") {
+		books[booksIndex].comments.push({
+			name: "Guest",
+			comment: commentInputValue,
+		});
+	}
+	//test localStorage
+	localStorage.setItem("comment", commentInputValue);
+	localStorage.getItem(commentInputValue);
+	renderBooks();
 }
 
 function getLikeStatus(liked) {

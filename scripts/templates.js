@@ -46,8 +46,14 @@ function getCommentsTemplate(comments) {
 		const comment = comments[commIndex];
 
 		commentsHTML += /*html*/ `
-            <p>${comment.name}: ${comment.comment}</p>
-            <br/>
+            <table>
+                <tbody id="comment-${commIndex + 1}">
+                    <tr>
+                        <th>${comment.name}</th>
+                        <td>:${comment.comment}</td>
+                    </tr>
+                </tbody>
+            </table>
         `;
 	}
 

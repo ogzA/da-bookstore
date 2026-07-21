@@ -32,8 +32,11 @@ function getBookTemplate(book) {
                     </tbody>
                 </table>
             </section>
-            <section id="section-comments">
-                ${getCommentsTemplate(book.comments)}
+            <section id="section-comments" class="section-comments">
+                <h3>Kommentare:</h3>
+                <div class="comment-list">
+                    ${getCommentsTemplate(book.comments)}
+                </div>
             </section>
         </article>
     `;

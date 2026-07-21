@@ -2,7 +2,7 @@ let likeButton = document.getElementById("like-button");
 
 function getBookTemplate(book) {
 	return /*html*/ `
-        <article class="book-container">
+        <article class="book-card">
             <header> <h2>${book.name}</h2></header>
             <section class="section-img" id="section-img">
                 <img src="./assets/img/book-element.png" height="75" alt="">

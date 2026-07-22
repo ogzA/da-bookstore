@@ -34,6 +34,8 @@ footer {
 main {
 	background: #a1ba9d;
 	padding-block: 4rem;
+	min-height: 100dvh;
+	place-content: center;
 }
 
 button {

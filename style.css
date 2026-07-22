@@ -9,7 +9,11 @@ body {
 }
 
 .container {
-	padding-inline: calc((100% - 1440px) / 2);
+	padding-inline: 1rem;
+
+	@media screen and (width >= 1400px) {
+		padding-inline: calc((100% - 1440px) / 2);
+	}
 }
 
 header.container {
@@ -23,6 +27,8 @@ header.container {
 footer {
 	background: #6eab7a;
 	padding-block: 2rem;
+	display: flex;
+	justify-content: center;
 }
 
 main {
@@ -37,7 +43,16 @@ button {
 
 .render-books {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(1, 1fr);
+
+	@media screen and (width >= 768px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (width >= 1400px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
 	grid-gap: 2rem;
 	.book-card {
 		height: 45em;
@@ -107,9 +122,35 @@ button {
 
 			.add-comment {
 				margin-top: 2rem;
+				display: flex;
+				justify-content: space-around;
+				gap: 0.5rem;
 				input {
 					height: 25px;
 					padding: 1rem;
+					width: 100%;
+					background: #6eab7a;
+					border: 0;
+					color: white;
+					border-radius: 5px;
+					height: 50px;
+					font-family: "Geomini";
+
+					&::placeholder {
+						color: white;
+					}
+				}
+
+				.add-comment__button {
+					width: 4rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 5px;
+
+					&:hover {
+						background-color: #6eab7a;
+					}
 				}
 			}
 		}

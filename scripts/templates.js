@@ -1,5 +1,3 @@
-let likeButton = document.getElementById("like-button");
-
 function getBookTemplate(book, booksIndex) {
 	return /*html*/ `
         <article class="book-card">
